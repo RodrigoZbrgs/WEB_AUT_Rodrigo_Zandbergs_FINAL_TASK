@@ -29,6 +29,10 @@ export class PracticeForm extends BasePage {
     return cy.get('#dateOfBirthInput');
   }
 
+  static get selectDate() {
+    return cy.get("[aria-label='Choose Thursday, April 30th, 2026']")
+  }
+
   static get subjectsField(){
     return cy.get('#subjectsInput');
   }
@@ -45,16 +49,32 @@ export class PracticeForm extends BasePage {
     return cy.get('#currentAddress');
   }
 
-  static get addfile(){
-    return cy.get('#uploadPicture').selectfile('fixtures/files/Untitled.png');
+
+  static addfile(filePath='cypress/fixtures/files/Untitled.png'){
+     cy.get('#uploadPicture').selectFile(filePath);
   }
 
   static get stateField(){
-    return cy.get('#react-select-3-input');
+    return cy.get('#state');
+  }
+
+  static get selectState() {
+    return cy.get('#react-select-3-option-0')
   }
 
   static get cityField(){
-    return cy.get('#react-select-4-live-region');
+    return cy.get('#react-select-4-input');
   }
 
+  static get selectCity() {
+    return cy.get('#react-select-4-option-0');
+  }
+
+  static get submitButton() {
+    return cy.get('#submit')
+  }
+
+  static get informationTable(){
+    return cy.get("[class='table table-dark table-striped table-bordered table-hover']")
+  }
 }
