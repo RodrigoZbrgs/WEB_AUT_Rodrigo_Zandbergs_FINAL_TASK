@@ -11,13 +11,15 @@ describe('Practice-Form scenarios', () => {
     //NECESSARY INFORMATION
     PracticeForm.firstName.type('John');
     PracticeForm.lastName.type('Doe');
-    PracticeForm.emailField.type('john.doe@example.com')
+    PracticeForm.emailField.type('john.doe@example.com');
     PracticeForm.gender.click();
-    PracticeForm.mobileNumber.type('1234567890')
+    PracticeForm.mobileNumber.type('1234567890');
 
     //DATE
     PracticeForm.dateOfBirth.click();
-    PracticeForm.selectDate.click();
+    PracticeForm.selectYear.select('1930');
+    PracticeForm.selectMonth.select('February');
+    PracticeForm.selectDay.click();
 
     //FILE UPLOAD
     PracticeForm.addfile();
@@ -59,7 +61,7 @@ describe('Practice-Form scenarios', () => {
     .contains('1234567890')
         .should('be.visible');
      PracticeForm.informationTable
-    .contains('30 April,2026')
+    .contains('28 February,1930')
         .should('be.visible');
      PracticeForm.informationTable
     .contains('Economics')

@@ -29,9 +29,18 @@ export class PracticeForm extends BasePage {
     return cy.get('#dateOfBirthInput');
   }
 
-  static get selectDate() {
-    return cy.get("[aria-label='Choose Thursday, April 30th, 2026']")
+  static get selectMonth(){
+    return cy.get("[class='react-datepicker__month-select']")
   }
+
+  static get selectDay() {
+    return cy.get('[class="react-datepicker__day react-datepicker__day--028"]')
+  }
+
+  static get selectYear() {
+    return cy.get("[class='react-datepicker__year-select']")
+  }
+
 
   static get subjectsField(){
     return cy.get('#subjectsInput');
